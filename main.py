@@ -46,7 +46,7 @@ def tagreader(filename):
     audiofile = eyed3.load(filename)
     artist = audiofile.tag.artist
     song = audiofile.tag.title
-    TLabel3.configure(text=song)
+    TLabel1.configure(text=song)
     TLabel2.configure(text=artist)
 
 
@@ -111,17 +111,17 @@ TButton3.place(relx=0.87, rely=0.70, height=48, width=48)
 img06 = PhotoImage(file="icons/media-eject.png")
 TButton3.configure(image=img06)
 
+TLabel1 = ttk.Label(Frm1)
+TLabel1.place(relx=0.01, rely=0.3, height=48, width=380)
+TLabel1.configure(font="-family {Noto Sans} -size 16")
+TLabel1.configure(relief="flat")
+TLabel1.configure(text="ARTIST:")
+
 TLabel2 = ttk.Label(Frm1)
-TLabel2.place(relx=0.01, rely=0.28, height=48, width=200)
+TLabel2.place(relx=0.01, rely=0.1, height=28, width=380)
 TLabel2.configure(font="-family {Noto Sans} -size 16")
 TLabel2.configure(relief="flat")
-TLabel2.configure(text="ARTIST:")
-
-TLabel3 = ttk.Label(Frm1)
-TLabel3.place(relx=0.26, rely=0.01, height=28, width=280)
-TLabel3.configure(font="-family {Noto Sans} -size 16")
-TLabel3.configure(relief="flat")
-TLabel3.configure(text="SONG NAME")
+TLabel2.configure(text="SONG NAME")
 
 if __name__ == '__main__':
     main()
