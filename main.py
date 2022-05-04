@@ -40,8 +40,11 @@ def loadmp3():
     STATUS[0] = "stop"
     global FILENAME
     FILENAME = fd.askopenfilename()
-    playconfig("play", FILENAME)
-    print(FILENAME)
+    if FILENAME:
+        playconfig("play", FILENAME)
+        print(FILENAME)
+    else:
+        pass
 
 
 def tagreader(filename):
@@ -115,13 +118,13 @@ TButton3.configure(image=img06)
 
 TLabel1 = ttk.Label(Frm1)
 TLabel1.place(relx=0.01, rely=0.3, height=48, width=380)
-TLabel1.configure(font="-family {Noto Sans} -size 16")
+TLabel1.configure(font="-family {Noto Sans} -size 14")
 TLabel1.configure(relief="flat")
 TLabel1.configure(text="ARTIST:")
 
 TLabel2 = ttk.Label(Frm1)
-TLabel2.place(relx=0.01, rely=0.1, height=28, width=380)
-TLabel2.configure(font="-family {Noto Sans} -size 16")
+TLabel2.place(relx=0.01, rely=0.1, height=32, width=380)
+TLabel2.configure(font="-family {Noto Sans} -size 14")
 TLabel2.configure(relief="flat")
 TLabel2.configure(text="SONG NAME")
 
