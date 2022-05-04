@@ -37,8 +37,10 @@ def destroy_me():
 
 
 def loadmp3():
+    STATUS[0] = "stop"
     global FILENAME
     FILENAME = fd.askopenfilename()
+    playconfig("play", FILENAME)
     print(FILENAME)
 
 
