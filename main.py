@@ -2,15 +2,16 @@
 # mpg123 lib on github
 # https://github.com/20tab/mpg123-python
 # icons tango icon theme
-from mpg123 import Mpg123, Out123
-import threading
-import tkinter.ttk as ttk
-import tkinter
-from tkinter import *
-from tkinter import messagebox
-from tkinter import filedialog as fd
 import time
 import eyed3
+import tkinter
+import threading
+from mpg123 import Mpg123, Out123
+from tkinter import ttk
+from tkinter import PhotoImage
+from tkinter import messagebox as msgbox
+from tkinter import filedialog as fd
+from tkinter import Tk
 
 
 def main():
@@ -27,7 +28,7 @@ def main():
 
 def destroy_me():
     global SON
-    msg = messagebox.askyesno("Çıkış", "Çıkmak İstiyor musunuz?")
+    msg = msgbox.askyesno("Çıkış", "Çıkmak İstiyor musunuz?")
     if msg:
         STATUS[0] = "stop"
         SON = True
