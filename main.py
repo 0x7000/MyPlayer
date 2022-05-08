@@ -49,11 +49,16 @@ def loadmp3():
 
 
 def tagreader(filename):
-    audiofile = eyed3.load(filename)
-    artist = audiofile.tag.artist
-    song = audiofile.tag.title
-    TLabel1.configure(text=song)
-    TLabel2.configure(text=artist)
+    try:
+        audiofile = eyed3.load(filename)
+        artist = audiofile.tag.artist
+        song = audiofile.tag.title
+        TLabel1.configure(text=song)
+        TLabel2.configure(text=artist)
+    except Exception as e:
+        print(e)
+        TLabel1.configure(text="Boş")
+        TLabel2.configure(text="Boş")
 
 
 def player():
@@ -118,13 +123,13 @@ img03 = PhotoImage(file="icons/media-eject.png")
 TButton3.configure(image=img03)
 
 TLabel1 = ttk.Label(Frm1)
-TLabel1.place(relx=0.01, rely=0.3, height=48, width=380)
+TLabel1.place(x=1, y=1)
 TLabel1.configure(font="-family {Noto Sans} -size 14")
 TLabel1.configure(relief="flat")
 TLabel1.configure(text="ARTIST:")
 
 TLabel2 = ttk.Label(Frm1)
-TLabel2.place(relx=0.01, rely=0.1, height=32, width=380)
+TLabel2.place(x=1, y=40)
 TLabel2.configure(font="-family {Noto Sans} -size 14")
 TLabel2.configure(relief="flat")
 TLabel2.configure(text="SONG NAME")
